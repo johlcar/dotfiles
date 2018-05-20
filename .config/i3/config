@@ -23,14 +23,15 @@ font pango:DejaVu Sans Mono 11
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
+# X core fonts rendering does not support right-to-https://emacs.stackexchange.com/questions/38888/howto-include-a-local-theme-in-spacemacsleft and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -39,14 +40,21 @@ bindsym $mod+Shift+q kill
 
 # i3-gaps from https://github.com/Airblader/i3
 # Disable window titlebars entirely
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 5
-gaps outer 2
+gaps inner 15
+gaps outer 5
 
 # Smart gaps
 smart_gaps on
+
+#--------------------------------------------------------------------------------
+
+
+# Where to run
+assign [class="Firefox"] $ws3
+assign [class="URxvt"] $ws1
 
 #--------------------------------------------------------------------------------
 
@@ -201,19 +209,39 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command    python ~/.config/i3/i3pystatus.conf
+    position          top
+    workspace_buttons yes
+    font pango:DejaVu Sans Mono 12
+    separator_symbol "·"
+
+    colors {
+        background  #1d2021
+        statusline  #ebdbb2
+        separator   #666666
+        # class             border  backgr. text
+        focused_workspace   #2B83A6 #2B83A6 #FFFFFF
+        active_workspace    #212121 #212121 #FFFFFF
+        inactive_workspace  #212121 #212121 #86888C
+        urgent_workspace    #D64E4E #D64E4E #FFFFFF
+    }
 }
 
 #--------------------------------------------------------------------------------
 
 # Startup programs
+exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id ~/.screenlayout/i3monitor.sh
 exec --no-startup-id nitrogen --restore
-# exec --no-startup-id compton --config ~/.config/compton.conf
 
 #--------------------------------------------------------------------------------
 
 #Custom Keybinds
+
+# Screenshots
 bindsym Print exec "scrot -e 'mv $f ~/Screenshots'"
+# Common programs
 bindsym $mod+Shift+w exec --no-startup-id firefox
 bindsym $mod+Shift+f exec --no-startup-id thunar
+# lock screen
+bindsym $mod+q exec ~/lock.sh
