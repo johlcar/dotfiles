@@ -17,7 +17,8 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 11
+#font pango:DejaVu Sans Mono 11
+font pango:System San Francisco Display Display 14
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -40,7 +41,7 @@ bindsym $mod+Shift+q kill
 
 # i3-gaps from https://github.com/Airblader/i3
 # Disable window titlebars entirely
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 
 # Set inner/outer gaps
 gaps inner 15
@@ -48,6 +49,9 @@ gaps outer 5
 
 # Smart gaps
 smart_gaps on
+
+# Hide borders
+hide_edge_borders both
 
 #--------------------------------------------------------------------------------
 
@@ -212,7 +216,6 @@ bar {
     status_command    python ~/.config/i3/i3pystatus.conf
     position          top
     workspace_buttons yes
-    font pango:DejaVu Sans Mono 12
     separator_symbol "·"
 
     colors {
