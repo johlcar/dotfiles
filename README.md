@@ -4,13 +4,14 @@
 
 <b>List of useful packages:</b></p>
 <ul>
-  <li>i3-gaps</li>
+  <li>i3-gaps (manjaro)</li>
   <li>i3pystatus</li>
   <li>rofi/dmenu</li>
   <li>compton</li>
   <li>urxvt</li>
-  <li>spacemacs</li>
+  <li>spacemacs/vim</li>
   <li>ranger/thunar</li>
+  <li>powerline</li>
 </ul>
   
   
