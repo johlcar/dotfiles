@@ -68,7 +68,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 #================================================================================
 #================================================================================
 
-# Start Applications
+# Custom keybinds 
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 #bindsym $mod+F2 exec palemoon
 #bindsym $mod+F3 exec pcmanfm
@@ -84,14 +84,18 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 #bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 #bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-bindsym $mod+Shift+w exec --no-startup-id firefox
+bindsym $mod+Shift+w exec --no-startup-id qutebrowser
 bindsym $mod+Shift+f exec --no-startup-id thunar
 
+# Note this binding conflicts with 'toggle split' when uncommented
+bindsym $mod+e exec --no-startup-id emacs
+
 #================================================================================
 #================================================================================
 #================================================================================
 
-# focus_follows_mouse no
+#focus_follows_mouse no
+#mouse_warping none
 
 # change focus
 bindsym $mod+h focus left
@@ -135,9 +139,9 @@ bindsym $mod+Control+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -218,7 +222,7 @@ workspace $ws3 output $monitor_three
 # Open applications on specific workspaces
 assign [class="URxvt"] $ws1
 assign [class="Xfce4-terminal"] $ws1
-assign [class="Firefox"] $ws3
+assign [class="qutebrowser"] $ws3
 
 #================================================================================
 #================================================================================
@@ -341,6 +345,7 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id ~/.screenlayout/i3monitor.sh
+exec --no-startup-id unclutter &
 
 #================================================================================
 #================================================================================
