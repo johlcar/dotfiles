@@ -8,8 +8,8 @@
   <li>i3pystatus</li>
   <li>rofi/dmenu</li>
   <li>compton</li>
-  <li>urxvt</li>
-  <li>spacemacs/vim</li>
+  <li>urxvt/xfce4-term</li>
+  <li>spacemacs/vim/intelliJ IDEA/VSCode</li>
   <li>ranger/thunar</li>
   <li>powerline</li>
 </ul>
