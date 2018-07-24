@@ -4,7 +4,7 @@
 #   qute://help/settings.html
 
 # Uncomment this to still load settings configured via autoconfig.yml
-config.load_autoconfig()
+# config.load_autoconfig()
 
 # Enable JavaScript.
 # Type: Bool
@@ -18,6 +18,11 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
+# Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
+# for a blank page.
+# Type: FuzzyUrl
+c.url.default_page = 'https://start.duckduckgo.com/'
+
 # Search engines which can be used via the address bar. Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
 # placeholder. The placeholder will be replaced by the search term, use
@@ -27,11 +32,11 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'amazon': 'http://www.amazon.com/s?url=search-alias%3Daps&field-keywords={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'ddgi': 'https://duckduckgo.com/?q=!dgi {}', 'g': 'https://www.google.com/search?hl=en&q={}', 'gi': 'https://www.google.com/search?tbm=isch&q={}', 'r': 'https://www.reddit.com/r/{}', 'wiki': 'https://en.wikipedia.org/wiki/Special:Search?search={}', 'yt': 'https://www.youtube.com/results?search_query={}'}
+c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?hl=en&q={}', 'amazon': 'http://www.amazon.com/s?url=search-alias%3Daps&field-keywords={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'ddg': 'https://duckduckgo.com/?q={}', 'ddgi': 'https://duckduckgo.com/?q=!dgi {}', 'g': 'https://www.google.com/search?hl=en&q={}', 'gi': 'https://www.google.com/search?tbm=isch&q={}', 'r': 'https://www.reddit.com/r/{}', 'wiki': 'https://en.wikipedia.org/wiki/Special:Search?search={}', 'yt': 'https://www.youtube.com/results?search_query={}'}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'https://github.com/johlcar'
+c.url.start_pages = 'https://start.duckduckgo.com/'
 
 # Default monospace fonts. Whenever "monospace" is used in a font
 # setting, it's replaced with the fonts listed here.
@@ -99,7 +104,39 @@ c.fonts.web.family.standard = None
 # Type: Dict
 c.bindings.key_mappings = {'<Ctrl+6>': '<Ctrl+^>', '<Ctrl+Enter>': '<Ctrl+Return>', '<Ctrl+j>': '<Return>', '<Ctrl+m>': '<Return>', '<Ctrl+[>': '<Escape>', '<Enter>': '<Return>', '<Shift+Enter>': '<Return>', '<Shift+Return>': '<Return>'}
 
+# Enable scroll bar
+c.scrolling.bar = True
+
+# Set statusbar to top position
+c.statusbar.position = 'top'
+
+# Set tabs to left position
+c.tabs.position = 'left' 
+
+# Make tabs width larger
+c.tabs.width = '60%'
+
+# Enable auto save previous session
+c.auto_save.session = True
+
+# Swap tab direction change of 'J' and 'K'
+config.unbind('J', mode='normal')
+config.unbind('K', mode='normal')
+
+config.bind('J', 'tab-prev', mode='normal')
+config.bind('K', 'tab-next', mode='normal')
+
+# Faster scroll speed
+config.unbind('j', mode='normal')
+config.unbind('k', mode='normal')
+
+config.bind('j', 'scroll-page 0 0.15', mode='normal')
+config.bind('k', 'scroll-page 0 -0.15', mode='normal')
+
 # Bindings for normal mode
 config.bind(';h', 'hint links spawn streamlink {hint-url} best')
 config.bind(';j', 'hint links spawn mpv {hint-url}')
+config.bind('T', 'open -t twitch.tv/following')
 config.bind('t', 'tab-clone')
+config.bind('xx', 'config-cycle tabs.show always never')
+

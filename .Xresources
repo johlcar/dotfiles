@@ -7,18 +7,18 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 XTerm*background: #2b2b2b
-XTerm*foreground: #13BF9D
+XTerm*foreground: #e7e7e7
 XTerm*pointerColor: #16A085
 XTerm*faceName: Fixed
 XTerm*faceSize: 11
 
 *background:                      #272827
-*foreground:                      #13BF9D
+*foreground:                      #657b83
 *fading:                          15
 *fadeColor:                       black
-*cursorColor:                     #ffffff
+*cursorColor:                     #16A085
 *pointerColorBackground:          #2B2C2B
-*pointerColorForeground:          #ffffff
+*pointerColorForeground:          #16A085
 
 !! black dark/light
 *color0:                          #232423
@@ -34,7 +34,7 @@ XTerm*faceSize: 11
 
 !! yellow dark/light
 *color3:                          #4C4F4D
-*color11:                         #ffff00
+*color11:                         #4E524F
 
 !! blue dark/light
 *color4:                          #16A085
@@ -42,7 +42,7 @@ XTerm*faceSize: 11
 
 !! magenta dark/light
 *color5:                          #43746A
-*color13:                         #ff66ff
+*color13:                         #487D72
 
 !! cyan dark/light
 *color6:                          #00CCCC
@@ -55,13 +55,13 @@ XTerm*faceSize: 11
 Xcursor.theme: xcursor-breeze
 Xcursor.size:                     0
 
-XTerm*background:                 #272827
-XTerm*foreground:                 #13BF9D
+!XTerm*background:                 #272827
+!XTerm*foreground:                 #fdf6e3
 XTerm*reverseVideo:               on
-XTerm*faceName:                   Terminus:size=11:antialias=true
+!XTerm*faceName:                   Terminus:size=11:antialias=true
 XTerm*selectToClipboard:          true
 
-URxvt.font:                       xft:DejaVu Sans Mono:size=14
+URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 
 ! alternative font settings with 'terminus':
 !URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
@@ -74,7 +74,7 @@ URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
 URxvt*background:                 black
-URxvt*foreground:                 #ffffff
+URxvt*foreground:                 grey
 URxvt*saveLines:                  5000
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
