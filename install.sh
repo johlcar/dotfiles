@@ -2,10 +2,10 @@
 
 PACKAGES=''
 
-PACKAGES+='arandr git i3-gaps i3blocks i3status nitrogen rofi xorg xorg-xinit '
+PACKAGES+='arandr git i3-gaps i3blocks i3status intel-ucode nitrogen rofi xorg xorg-xinit '
 
 # Files
-PACKAGES+='gvfs polkit-gnome thunar '
+PACKAGES+='gvfs ntfs-3g polkit-gnome thunar ranger '
 
 # Editors
 PACKAGES+='xfce4-terminal vim emacs mousepad '
@@ -17,16 +17,19 @@ PACKAGES+='firefox qutebrowser '
 PACKAGES+='alsa-utils pulseaudio pulseaudio-alsa pavucontrol '
 
 # Video
-PACKAGES+='mpv vlc youtube-dl streamlink flashplugin  '
+PACKAGES+='mesa-demos lib32-mesa mpv vlc youtube-dl streamlink flashplugin  '
+
+# AMD GPU - R9 390
+PACKAGES+='xf86-video-amdgpu xf86-video-ati '
 
 # Bluetooth
-PACKAGES+='blueman bluez bluez-utils '
+PACKAGES+='blueman bluez bluez-utils pulseaudio-bluetooth '
 
 # Appearance
-PACKAGES+='compton lxappearance ttf-dejavu '
+PACKAGES+='arc-gtk-theme compton gtk-chtheme lxappearance noto-fonts ttf-dejavu ttf-liberation qt4 '
 
 # Utilities
-PACKAGES+='unclutter keepassxc scrot gimp deluge unzip unrar '
+PACKAGES+='unclutter keepassxc scrot gimp deluge unzip unrar neofetch powerline powerline-fonts '
 
 pacman -Sy $PACKAGES
 
