@@ -2,12 +2,9 @@
 
 <p><i>A snapshot of my dotfiles intended for personal use.</i></p>
 
-<b>Arch Linux / i3-gaps</b>
-
-Packages:</p>
+<b>Arch Linux / i3-gaps</b></p>
 
 <ul>
-  
   <li>polybar</li>
   <li>rofi</li>
   <li>compton</li>
@@ -17,5 +14,7 @@ Packages:</p>
   <li>nitrogen</li>
   <li>qutebrowser</li>
 </ul>
+![Dotfiles Preview](dotfiles.png)
+
   
   
