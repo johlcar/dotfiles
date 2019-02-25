@@ -14,7 +14,8 @@
   <li>nitrogen</li>
   <li>qutebrowser</li>
 </ul>
-[Dotfiles Preview](dotfiles.png)
+
+<img src="/dotfiles.png?raw=true"/> 
 
   
   
