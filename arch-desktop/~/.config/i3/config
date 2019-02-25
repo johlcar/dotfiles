@@ -14,7 +14,7 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 12
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 2
+new_window pixel 3
 new_float normal
 
 # Hide borders
@@ -24,13 +24,43 @@ hide_edge_borders none
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id xfce4-terminal
+bindsym $mod+Return exec --no-startup-id termite -e fish
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show run
+
+#==========================================
+#============ Window Border Color  ========
+#==========================================
+
+# Set Xresources colors:
+set_from_resource $darkblack color0
+set_from_resource $black color8
+set_from_resource $darkred color1
+set_from_resource $red  color9
+set_from_resource $darkgreen color2
+set_from_resource $green color10
+set_from_resource $darkyellow color3
+set_from_resource $yellow color11
+set_from_resource $darkblue color4
+set_from_resource $blue  color12
+set_from_resource $darkmagenta color5
+set_from_resource $magenta color13
+set_from_resource $darkcyan color6
+set_from_resource $cyan  color14
+set_from_resource $darkwhite color7
+set_from_resource $white color15
+set $transparent #00000000
+
+#                       BORDER        BACKGROUND TEXT     INDICATOR    CHILD_BORDER
+client.focused          $red          $red       $magenta $darkmagenta $darkblue
+client.unfocused        $transparent  $blue      $white   $darkblue    $darkblack
+client.focused_inactive $transparent  $blue      $white   $darkblue    $darkblack
+client.urgent  $darkred $darkred      $black     $darkred $darkred
+client.background $black
 
 #==========================================
 #============ Window Navigation ===============
@@ -134,9 +164,9 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # default workspace outputs
-set $monitor_one HDMI-2
-set $monitor_two DVI-0
-set $monitor_three DVI-1
+set $monitor_one HDMI-A-2
+set $monitor_two DVI-D-0
+set $monitor_three DisplayPort-1
 
 # Bind workspaces to monitors
 workspace $ws1 output $monitor_one
@@ -224,28 +254,28 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        output $monitor_two
-        font pango:Sans 16
-        position top
-        tray_output none
-        status_command ~/.config/bumblebee-status/bumblebee-status -m spotify bluetooth disk nic pasink pasource weather date time pacman -p interval=2.5 time.format="%I:%M%p" date.format="%a, %b %d %Y" weather.location="Franklin" weather.unit="imperial" nic.format="{state}" pacman.sum="true" disk.format="{used}/{size}" -t johlcar-powerline
-
-}
-
-bar {
-        output $monitor_one
-        font pango:Sans 16 
-        position top
-        tray_output none
-}
-
-bar {
-        output $monitor_three
-        font pango:Sans 16
-        position top
-        tray_output none
-}
+#bar {
+#        output $monitor_two
+#        font pango:Sans 16
+#        position top
+#        tray_output none
+#        status_command ~/.config/bumblebee-status/bumblebee-status -m spotify bluetooth disk nic pasink pasource weather date time pacman -p interval=2.5 time.format="%I:%M%p" date.format="%a, %b %d %Y" weather.location="Franklin" weather.unit="imperial" nic.format="{state}" pacman.sum="true" disk.format="{used}/{size}" -t johlcar-powerline
+#
+#}
+#
+#bar {
+#        output $monitor_one
+#        font pango:Sans 16 
+#        position top
+#        tray_output none
+#}
+#
+#bar {
+#        output $monitor_three
+#        font pango:Sans 16
+#        position top
+#        tray_output none
+#}
 
 
 
@@ -271,17 +301,21 @@ smart_borders on
 bindsym Print --release exec --no-startup-id scrot -u ~/images/screenshots/%Y-%m-%T-screenshot.png 
 bindsym $mod+Shift+w exec --no-startup-id qutebrowser
 bindsym $mod+Shift+f exec --no-startup-id thunar
+bindsym $mod+p exec --no-startup-id polybartoggle
 
 #==============================================
 #============ Startup Applications ============
 #==============================================
 
-# Set up display formatting
+# Set up display/wallpaper
 exec --no-startup-id ~/.screenlayout/monitor_output.sh
-exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id compton -b
+exec_always --no-startup-id nitrogen --restore
 
-# polkit-gnome for Thunar
+# Start Polybar
+exec --no-startup-id polybarstart
+
+# Let Thunar access other partitions
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Disable auto sleep
@@ -289,4 +323,7 @@ exec --no-startup-id xset -dpms; xset s off
 
 # Hide cursor after delay
 exec --no-startup-id unclutter &
+
+# Initialize tray applets
+exec --no-startup-id pa-applet
 

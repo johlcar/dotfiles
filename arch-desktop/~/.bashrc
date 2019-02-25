@@ -6,9 +6,13 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='\u \w $ '
+PS1='\[\e[37m\] \W\[\e[m\] >'
 
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/share/powerline/bindings/bash/powerline.sh
+PATH="$HOME/scripts:$PATH"
+export PATH
+
+# Append Anaconda so that it doesn't override system Python
+export PATH="$PATH:/home/joslcar/anaconda3/bin"
+
+# Pywal remember theme
+#(cat ~/.cache/wal/sequences &)

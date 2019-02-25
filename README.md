@@ -1,22 +1,21 @@
 <h3>Dotfiles</h3>
 
-<p><i>This is a snapshot of my dotfiles.  It is intended for my personal use, feel free to implement parts of my config files as your own if you find something helpful.</i></p>
+<p><i>A snapshot of my dotfiles intended for personal use.</i></p>
 
-<b>Distribution: Arch Linux / Window Manager: i3-gaps</b>
+<b>Arch Linux / i3-gaps</b>
 
-List of useful tools/packages:</p>
+Packages:</p>
 
 <ul>
   
-  <li>Bumblebee-status</li>
-  <li>Rofi application launcher</li>
-  <li>Compton compositor</li>
-  <li>Xfce4-terminal</li>
-  <li>Spacemacs/Vim/IntelliJ IDEA/VSCode</li>
-  <li>Thunar/Ranger file managers</li>
-  <li>Powerline</li>
-  <li>Nitrogen</li>
-  <li>Qutebrowser/Firefox</li>
+  <li>polybar</li>
+  <li>rofi</li>
+  <li>compton</li>
+  <li>termite/xfce4-terminal</li>
+  <li>nvim</li>
+  <li>thunar/ranger</li>
+  <li>nitrogen</li>
+  <li>qutebrowser</li>
 </ul>
   
   
