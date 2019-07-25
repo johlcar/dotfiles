@@ -2,13 +2,13 @@
 
 PACKAGES=''
 
-PACKAGES+='arandr git i3-gaps i3blocks i3status intel-ucode nitrogen rofi xorg xorg-xinit '
+PACKAGES+='arandr compton git i3-gaps i3blocks i3status intel-ucode nitrogen rofi xorg xorg-xinit '
 
 # Files
-PACKAGES+='gvfs ntfs-3g polkit-gnome thunar ranger '
+PACKAGES+='gvfs polkit-gnome thunar ranger '
 
 # Terminals/editors
-PACKAGES+='xfce4-terminal termite tmux fish code vim nvim mousepad '
+PACKAGES+='termite tmux code gedit '
 
 # Browsers
 PACKAGES+='firefox qutebrowser '
@@ -26,9 +26,9 @@ PACKAGES+='xf86-video-amdgpu xf86-video-ati '
 PACKAGES+='blueman bluez bluez-utils pulseaudio-bluetooth '
 
 # Appearance
-PACKAGES+='arc-gtk-theme compton gtk-chtheme lxappearance noto-fonts ttf-dejavu ttf-liberation qt4 '
+PACKAGES+='breeze hicolor-icon-theme gnome-icon-theme noto-fonts papirus-icon-theme powerline-fonts ttf-dejavu ttf-fantasque-sans-mono ttf-font-awesome ttf-hack ttf-liberation '
 
 # Utilities
-PACKAGES+='unclutter keepassxc scrot gimp deluge unzip unrar neofetch powerline powerline-fonts '
+PACKAGES+='gtk-chtheme lxappearance unclutter keepassxc scrot unzip unrar '
 
 pacman -Sy $PACKAGES
