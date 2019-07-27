@@ -2,7 +2,7 @@
 
 PACKAGES=''
 
-PACKAGES+='arandr compton git i3-gaps i3blocks i3lock i3status nitrogen ntfs-3g os-prober rofi xorg xorg-xinit '
+PACKAGES+='arandr compton git i3-gaps i3lock i3status nitrogen ntfs-3g os-prober rofi xorg xorg-xinit '
 
 # Files
 PACKAGES+='gvfs polkit-gnome thunar ranger '
@@ -29,6 +29,6 @@ PACKAGES+='blueman bluez bluez-utils pulseaudio-bluetooth '
 PACKAGES+='awesome-terminal-fonts breeze hicolor-icon-theme gnome-icon-theme noto-fonts papirus-icon-theme powerline-fonts terminus-font ttf-dejavu ttf-fantasque-sans-mono ttf-font-awesome ttf-hack ttf-liberation '
 
 # Utilities
-PACKAGES+='gtk-chtheme lxappearance unclutter keepassxc scrot unzip unrar '
+PACKAGES+='lxappearance unclutter keepassxc scrot unzip unrar qt5ct '
 
 pacman -Sy $PACKAGES
