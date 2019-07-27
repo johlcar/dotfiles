@@ -16,7 +16,7 @@
 </ul>
 
 <p>Use install script for needed applications post Arch install. Clone bumblebee-status into .config. Replace config files. Apply GTK and QT5 themes/icons. Set system font to Hack.</p>
-<img src="/dotfiles.png?raw=true"/> 
+<img src="/gruvbox.png?raw=true"/> 
 
   
   
