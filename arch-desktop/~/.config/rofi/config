@@ -1,7 +1,0 @@
-rofi.color-enabled: true
-rofi.color-window: #1E272B, #78824B, #78824B
-rofi.color-normal: #1E272B, #EAD49B, #1E272B, #78824B, #1E272B
-rofi.color-active: #1E272B, #EAD49B, #1E272B, #1E272B, #78824B
-rofi.color-urgent: #1E272B, #EAD49B, #1E272B, #1E272B, #78824B
-
-rofi.font: Source Code Pro Semibold 16
