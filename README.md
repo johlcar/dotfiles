@@ -15,7 +15,7 @@
   <li><a href="https://github.com/qutebrowser/qutebrowser">qutebrowser</a></li>
 </ul>
 
-<p>Use install script for needed applications post Arch install. Clone bumblebee-status into .config. Replace config files. Apply GTK and QT5 themes/icons. Set system font to Hack.</p>
+<p>Use install script for needed applications post Arch install. Clone bumblebee-status into .config. Replace config files. Apply GTK and QT themes/icons. Set system font to Hack.</p>
 <img src="/gruvbox.png?raw=true"/> 
 
   
